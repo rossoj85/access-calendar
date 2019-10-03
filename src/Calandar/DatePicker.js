@@ -4,9 +4,11 @@
 *
 *   File:   datepicker.js
 */
+import CalendarButtonInput from './CalendarButtonInput'
+import DatePickerDay from './DatepickerDay';
 
-var CalendarButtonInput = CalendarButtonInput || {};
-var DatePickerDay = DatePickerDay || {};
+// var CalendarButtonInput = CalendarButtonInput || {};
+// var DatePickerDay = DatePickerDay || {};
 
 var DatePicker = function (inputNode, buttonNode, dialogNode) {
   this.dayLabels = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -617,3 +619,6 @@ DatePicker.prototype.setMessage = function (str) {
     this.lastMessage = str;
   }
 };
+
+
+export default DatePicker;

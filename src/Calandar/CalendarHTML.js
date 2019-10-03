@@ -1,4 +1,7 @@
 import React,{useEffect} from 'react';
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee , faCalendar, faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight,faAngleRight} from '@fortawesome/free-solid-svg-icons'
 
 
 const CalandarHTML = () =>{
@@ -7,6 +10,9 @@ const CalandarHTML = () =>{
     // Update the document title using the browser API
     // document.title = `You clicked ${count} times`;
     console.log('Calendar HTML Loaded');
+    const node = ReactDOM.findDOMNode(this);
+    console.log('this in Calandar html',this)
+
   });
 
     return(
@@ -21,7 +27,7 @@ const CalandarHTML = () =>{
            id="id-textbox-1"
            aria-autocomplete="none" />
     <button className="icon" aria-label="Choose Date">
-      <span className="fa fa-calendar fa-2x"></span>
+      <FontAwesomeIcon icon={faCalendar} className="fa-2x" />
     </button>
   </div>
   <div id="id-datepicker-1"
@@ -31,10 +37,12 @@ const CalandarHTML = () =>{
        aria-labelledby="id-dialog-label">
     <div className="header">
       <button className="prevYear" aria-label="previous year">
-        <span className="fas fa-angle-double-left fa-lg"></span>
+        {/* <span className="fas fa-angle-double-left fa-lg"></span> */}
+        <FontAwesomeIcon icon={faAngleDoubleLeft} />
       </button>
       <button className="prevMonth" aria-label="previous month">
-        <span className="fas fa-angle-left fa-lg"></span>
+        {/* <span className="fas fa-angle-left fa-lg"></span> */}
+        <FontAwesomeIcon icon={faAngleLeft} />
       </button>
       <h2 id="id-dialog-label"
           className="monthYear"
@@ -42,10 +50,12 @@ const CalandarHTML = () =>{
         Month Year
       </h2>
       <button className="nextMonth" aria-label="next month">
-        <span className="fas fa-angle-right fa-lg"></span>
+        {/* <span className="fas fa-angle-right fa-lg"></span> */}
+        <FontAwesomeIcon icon={faAngleRight} />
       </button>
       <button className="nextYear" aria-label="next year">
-        <span className="fas fa-angle-double-right fa-lg"></span>
+        {/* <span className="fas fa-angle-double-right fa-lg"></span> */}
+        <FontAwesomeIcon icon={faAngleDoubleRight} />
       </button>
     </div>
     <table id="myDatepickerGrid"

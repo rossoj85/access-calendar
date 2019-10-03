@@ -5,9 +5,15 @@
 *   File:   calendar-button.js
 */
 
-var DatePicker = DatePicker || {};
+import DatePicker from './DatePicker';
 
-var CalendarButtonInput = (inputNode, buttonNode, datepicker) => {
+console.log('hello from Calendar');
+console.log('Datepicker---->', DatePicker);
+
+//CHANGED
+// var DatePicker = DatePicker || {};
+
+var CalendarButtonInput = function(inputNode, buttonNode, datepicker) {
   this.inputNode    = inputNode;
   this.buttonNode   = buttonNode;
   this.imageNode    = false;
@@ -21,6 +27,8 @@ var CalendarButtonInput = (inputNode, buttonNode, datepicker) => {
     'SPACE': 32
   });
 };
+
+console.log(CalendarButtonInput.prototype);
 
 CalendarButtonInput.prototype.init = function () {
   this.buttonNode.addEventListener('click', this.handleClick.bind(this));
@@ -50,7 +58,8 @@ CalendarButtonInput.prototype.handleKeyDown = function (event) {
   }
 };
 
-CalendarButtonInput.prototype.handleClick = function () {
+//CHANGED - put event into take in
+CalendarButtonInput.prototype.handleClick = function (evt) {
   if (!this.datepicker.isOpen()) {
     this.datepicker.show();
     this.datepicker.setFocusDay();
@@ -59,8 +68,8 @@ CalendarButtonInput.prototype.handleClick = function () {
     this.datepicker.hide();
   }
 
-  event.stopPropagation();
-  event.preventDefault();
+  evt.stopPropagation();
+  evt.preventDefault();
 
 };
 
@@ -115,18 +124,19 @@ CalendarButtonInput.prototype.handleFocus = function () {
 
 // Initialize menu button date picker
 
-window.addEventListener('load' , function () {
+// window.addEventListener('load' , function () {
 
-  var datePickers = document.querySelectorAll('.datepicker');
+//   var datePickers = document.querySelectorAll('.datepicker');
 
-  datePickers.forEach(function (dp) {
-    var inputNode   = dp.querySelector('input');
-    var buttonNode  = dp.querySelector('button');
-    var dialogNode  = dp.querySelector('[role=dialog]');
+//   datePickers.forEach(function (dp) {
+//     var inputNode   = dp.querySelector('input');
+//     var buttonNode  = dp.querySelector('button');
+//     var dialogNode  = dp.querySelector('[role=dialog]');
 
-    var datePicker = new DatePicker(inputNode, buttonNode, dialogNode);
-    datePicker.init();
-  });
+//     var datePicker = new DatePicker(inputNode, buttonNode, dialogNode);
+//     datePicker.init();
+//   });
 
-});
+// });
 
+export default CalendarButtonInput;

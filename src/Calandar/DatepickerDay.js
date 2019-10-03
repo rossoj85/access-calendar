@@ -176,3 +176,5 @@ var DatePickerDay = function (domNode, datepicker, index, row, column) {
   DatePickerDay.prototype.handleFocus = function () {
     this.datepicker.setMessage(this.datepicker.messageCursorKeys);
   };
+
+  export default DatePickerDay;
