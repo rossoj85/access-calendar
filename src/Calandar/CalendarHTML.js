@@ -6,14 +6,14 @@ import { faCoffee , faCalendar, faAngleDoubleLeft, faAngleLeft, faAngleDoubleRig
 
 const CalandarHTML = () =>{
   
-  useEffect(() => {
-    // Update the document title using the browser API
-    // document.title = `You clicked ${count} times`;
-    console.log('Calendar HTML Loaded');
-    const node = ReactDOM.findDOMNode(this);
-    console.log('this in Calandar html',this)
+  // useEffect(() => {
+  //   // Update the document title using the browser API
+  //   // document.title = `You clicked ${count} times`;
+  //   console.log('Calendar HTML Loaded');
+  //   const node = ReactDOM.findDOMNode(this);
+  //   console.log('this in Calandar html',this)
 
-  });
+  // });
 
     return(
 
@@ -23,7 +23,7 @@ const CalandarHTML = () =>{
       Date
     </label>
     <input type="text"
-           placeholder="mm/dd/yyyy"
+          //  placeholder="mm/dd/yyyy"
            id="id-textbox-1"
            aria-autocomplete="none" />
     <button className="icon" aria-label="Choose Date">

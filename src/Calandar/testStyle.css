@@ -1,0 +1,22 @@
+.yellowBackground{
+    background-color: yellow
+}
+
+.textPurp{
+    color: purple;
+    margin-left: 20px
+}
+.testBox{
+    background: black;
+    color:  red;
+    border: 1px solid orange;
+}
+
+#focus-display{
+    margin-top: 500px;
+    background-color: burlywood;
+}
+#errorMessageReservedSpace{
+    color:red;
+
+}
